@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  body.server-trivia
+    h1 Add a new Question:
+      div
+        label Question:
+        input#question(placeholder="Question")
+      
+      div
+        label Correct answer:
+        input#correctAnswer(placeholder="Correct answer")
+      
+      div
+        label Wrong answer:
+        input#wrong1(placeholder="Wrong answer #1")
+      
+      div
+        label Wrong answer:
+        input#wrong2(placeholder="Wrong answer #2")
+      
+      div
+        label Wrong answer:
+        input#wrong3(placeholder="Wrong answer #3")
+        
+      div
+        button#create Create
+      
