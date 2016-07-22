@@ -119,6 +119,13 @@ textarea {
     margin: 10px auto;
     display: block;
   }
+  .pin {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    font-size: 10rem;
+    color: #02B2E7;
+  }
   img.frame {
     zoom: 1.8;
     transform: rotate(270deg);

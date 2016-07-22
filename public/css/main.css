@@ -8861,6 +8861,12 @@ textarea {
     max-width: 960px;
     margin: 10px auto;
     display: block; }
+  .server-trivia .pin {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    font-size: 10rem;
+    color: #02B2E7; }
   .server-trivia img.frame {
     zoom: 1.8;
     transform: rotate(270deg); }
