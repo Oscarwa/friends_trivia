@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  body.client-trivia
+    img.logo(src='../friends_logo.png')
+  
+    
+    .setup
+      .pin
+        input.pin_code(type="number", maxlength="4")
+        
+      div.continue
+        a.btn.next(href="/client") Back 
+        a#join.btn.next Next
+          
+  script.
+    var user = !{JSON.stringify(user)})
+    console.log(user)
+
+block scripts
+  script(src='/js/client/connect.js')
+  
+    

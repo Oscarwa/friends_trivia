@@ -78,6 +78,39 @@ textarea {
         #warning-message { display:none; }
     }
 
+.setup {
+  top: 50%;
+  position: relative;
+
+  .profile {
+    border: 6px solid #4C3265;
+    border-radius: 10px;
+    margin: 60px auto;
+  }
+
+  .next {
+    border-radius: 6px;
+    border: none;
+    margin: 30px 10px;
+    padding: 15px 20px;
+    font-size: 4rem;
+    color: #000000;
+    background-color: #4C3265;
+  }
+
+  .pin {
+    width: 70%;
+    margin: 60px auto;
+    input {
+      border: 1px solid #DFDFDF;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 5rem;
+      text-align: center;
+    }
+  }
+}
+
 .client-trivia {
   img.logo {
     width: 80%;

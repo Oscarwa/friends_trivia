@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // Place JavaScript code here...
-  var socket = io.connect('http://192.168.1.105:3000');
+  var socket = io.connect('/');
 
   // socket.on('greet', function (data) {
   //   console.log(data);

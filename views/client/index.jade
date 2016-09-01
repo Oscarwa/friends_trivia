@@ -4,8 +4,25 @@ block content
   body.client-trivia
     img.logo(src='friends_logo.png')
   
-    div#content.btns-section
-      button#b1.btn-section Respuesta #01
-      button#b2.btn-section Respuesta #02
-      button#b3.btn-section Respuesta #03
-      button#b4.btn-section Respuesta #04
+    
+    .setup
+      if !user
+        h2 Join!
+        .form-group
+          .col-sm-offset-3.col-sm-7
+            a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+              i.fa.fa-facebook
+              | Join with Facebook
+      else
+        if user.profile.picture
+          img.profile(src='#{user.profile.picture}')
+        else
+          img.profile(src='#{user.gravatar(60)}')
+        
+        div.continue
+          a.btn.next(href="/logout") Back 
+          a.btn.next(href="/client/connect") Next
+          
+  script.
+    console.log(!{JSON.stringify(user)})
+    

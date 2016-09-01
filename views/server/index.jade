@@ -2,12 +2,13 @@ extends layout
 
 block content
   body.server-trivia
-    img.logo(src='friends_logo.png')
-  
-    div.pin #{trivia.pin}
-  
-    img.frame(src='frame2.png')
-    span Como se llama la pareja de Phoebe que es un cientifico?
+    h3 To start please join using the following PIN
 
-    ul.answers
-      
+    h4 Users connected
+    ul.users 
+    
+    div.pin #{trivia.pin}
+
+block scripts
+  //script(src="/assets/qrious/dist/umd/qrious.js")
+  script(src="/js/server/setup.js")
