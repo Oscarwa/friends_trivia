@@ -11,11 +11,12 @@ block content
         
       div.continue
         a.btn.next(href="/client") Back 
-        a#join.btn.next Next
+        a#join.btn.next Join
+      input(type='hidden', name='_csrf', value=_csrf)
+      
           
   script.
-    var user = !{JSON.stringify(user)})
-    console.log(user)
+    var user = !{JSON.stringify(user)};
 
 block scripts
   script(src='/js/client/connect.js')

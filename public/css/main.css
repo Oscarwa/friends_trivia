@@ -8835,6 +8835,10 @@ textarea {
   #warning-message {
     display: none; } }
 
+.profile {
+  border-radius: 50%;
+  border: 3px solid #000000; }
+
 .setup {
   top: 50%;
   position: relative; }

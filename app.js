@@ -22,7 +22,8 @@ const upload = multer({ dest: path.join(__dirname, 'uploads') });
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
  */
-dotenv.load({ path: '.env.example' });
+//dotenv.load({ path: '.env.dev' });
+dotenv.load({ path: '.env.prod' });
 
 /**
  * Controllers (route handlers).
@@ -133,8 +134,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 app.get('/client', clientController.index);
 app.get('/client/connect', clientController.connect);
 app.get('/client/game', clientController.game );
-
-
+app.post('/client/join', clientController.join );
 
 /**
  * Server routes
@@ -246,6 +246,12 @@ app.use(errorHandler());
      console.log(data);
      socket.broadcast.emit('answered', data);
    });
+
+   socket.on('join', (data) => {
+     socket.join(data.pin);
+     socket.to(data.pin).emit('user_connected', data.user);
+   });
+
    socket.on('disconnect', () => {
      console.log('Socket disconnected');
    });

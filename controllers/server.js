@@ -10,7 +10,7 @@ exports.index = (req, res) => {
       pin: generatePincode(),
   });
 
-  const qs = Question.aggregate({ '$sample': { size: 3}})
+  //const qs = Question.aggregate({ '$sample': { size: 3}})
 
   trivia.save((err) => {
     if (err) { return next(err); }
@@ -70,5 +70,5 @@ function generatePincode () {
   for (var i = 0; i < 4; i++) {
     pinCodeArray.push(Math.floor(Math.random() * 10))
   }
-  return pinCodeArray.join(' ')
+  return pinCodeArray.join('')
 }

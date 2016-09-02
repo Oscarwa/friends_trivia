@@ -7,9 +7,10 @@ $(document).ready(function() {
   //   console.log(data);
   //   socket.emit('answer', { message: 'Hello to you too, Mr.Server!' });
   // });
+  socket.emit('join', {pin: pinCode});
 
   socket.on('user_connected', function (data) {
-    $('.users').append('<li>' + data.userName + '</li>');
+    $('.users').append('<li><img src="' + data.profile.picture + '" class="profile" /></li>');
   });
 
 });

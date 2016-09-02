@@ -7,8 +7,19 @@ $(document).ready(function() {
   //   socket.emit('answer', { message: 'Hello to you too, Mr.Server!' });
   // });
 
-  $('.btn-section').on("click tap", function() {
-    socket.emit('answer', {message: $(this).text() });
+  $('#join').on("click", function() {
+    var joinModel = {
+      _csrf: $('input[name="_csrf"]').val(),
+      pin: $('.pin_code').val(),
+      user: user
+    };
+    $.post('/client/join', joinModel, function(response) {
+      console.info(response);
+      socket.emit('join', joinModel);
+      location.href = '/client/game';
+    });
+    //socket.emit('answer', {message: $(this).text() });
   });
+  //console.log(user);
 
 });
